@@ -1,3 +1,4 @@
+
 from flask import Flask  # Import Flask class
 from flask_sqlalchemy import SQLAlchemy  # Import SQLAlchemy class
 
@@ -20,13 +21,13 @@ def index():
     return "This is a TODO list"
 
 
-# @app.route('/todos')
-# def showtodos():
-#     all_todos = Todos.query.all()
-#     todo_sum = ""
-#     for todo in all_todos:
-#         todo_sum = todo_sum + "<br>" + todo.task + " " + str(todo.complete)
-#     return todo_sum
+@app.route('/add')
+def add():
+    # a new entry in the database
+    new_todo1 = Todos(task='Take out the bins', complete=True)
+    db.session.add(new_todo1)
+    db.session.commit()
+    return "Add a new ToDO item"
 
 
 if __name__ == '__main__':
