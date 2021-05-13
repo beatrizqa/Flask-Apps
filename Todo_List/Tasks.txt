@@ -1,0 +1,24 @@
+TODO LIST DAY 1
+    1. Create a new Flask app in your FlaskApps repo called "Todo_List"
+    2. This Flask app should have 1 table called "todos" containing the following columns:
+        1. ID (INT)
+        2. Task (String)
+        3. Complete (Boolean)
+    3. This app should contain a create.py that connects to the DB and creates the table
+    4. The app should return "This is a TODO list" on the index(/)
+    5. (Stretch Goal) Add some entries to the todos table and get the app to return the entries on the scree at '/todos'
+
+TODO LIST DAY 2
+    1. Create routes that ADDS a new Todo with the value 'New Todo' every time
+    2. Create 2 routes:
+        1. one that completes the todo specified in the path (i.e. /complete/1 will complete Todo with ID 1). It should return a message saying 'Completed Todo 1'
+        2. the second one will delete the Todo in the path (i.e. '/delete/1' will delete Todo with ID 1)
+    3. Create 2 templates:
+        1. a 'layout.html' (it will have the layout)
+        2. 'index.html (which displays all Todos)
+    4. Change your template to show a tick ('&#9989') if the Todo is complete
+    5. Create a form that will allow users to enter Todos and put this form in a new template called 'add.html'
+    6. (Stretch Goal) Add buttons at the top of every page to take you to the 'Home' and 'Add' pages to make it easier to navigate
+
+TODO LIST DAY 3
+

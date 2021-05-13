@@ -1,6 +1,8 @@
-from application import db  # we need this to create our models
+# we need this to create our tables. This import the sqlalchemy object (db) created for our app
+from application import db
 
-''' This fime just stores our models, our tables'''
+# The SQLAlchemy object provides us with the functions and helpers we need to design our tables
+# Each table is declared as a class using the declarative base db.Model.
 
 
 class Games(db.Model):  # this creates the 'Games' table
