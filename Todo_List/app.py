@@ -123,5 +123,18 @@ def delete(todo_id):
     return redirect(url_for("index"))  # this takes us back to index page
 
 
+# to use the update page we need another route
+@app.route("/update/<int:todo_id>", methods=["GET", "POST"])
+def update(todo_id):  # we have to pass the variable(todo_id)
+    form = TodoForm()
+    # first time user goes to the update page we need to be able to tell them what todo they are updating
+    todo_to_be_updated = Todos.query.get(todo_id)
+    if form.validate_on_submit():
+        todo_to_be_updated = form.task.data
+        db.session.commit()
+    # we return a render template and we are going to render 'update.html & we pass the form into that template
+    return render_template("update.html", form=form)
+
+
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
